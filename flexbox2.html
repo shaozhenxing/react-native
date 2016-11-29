@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		html{
+			height:100%;
+		}
+
+		body{
+
+			/* 第一 display:flex 指定body 为伸缩容器*/
+			display:-webkit-box; /*老版本语法：safari,ios,android*/
+			display: -moz-box;	 /*老版本语法：Firefox(buggy)*/
+			display: -ms-flexbox; /*混合版本语法 IE10*/
+			display: -webkit-flex; /*新版本语法 chrome 21+*/
+
+			display: flex;		/*新版本语法 opera 12.1 firefox 22+*/
+
+			/*第二 伸缩容器的方向 
+				row正常排列 （默认值）
+				row-reverse反转排列 
+				column垂直 
+				column-reverse 垂直反转排列*/
+			flex-direction:row;  
+
+			/*第三 主轴空间不足的情况怎么处理。
+				warp 是空间不足的情况下换行,
+				nowarp 空间不足的情况下不换行, （默认值）
+				warp-reverse 空间不足的时候换行，换行的方向放上*/
+			flex-wrap:wrap;    
+			
+			/*垂直居中*/
+			/*老版本语法*/
+			-webkit-box-align:center;
+			-moz-box-align:center;
+			/*混合版本语法*/
+			-ms-flex-align:center;
+			/*新版本语法*/
+			-webkit-align-items:center;
+			align-items:center;
+
+			/*水平居中*/
+			/*老版本语法*/
+			-webkit-box-pack:center;
+			-moz-box-pack:center;
+			/*混合版本语法*/
+			-ms-flex-pack:center; 
+
+			/*第五 用来定义伸缩项目在主轴线上的对齐方式 
+				flex-start 左对齐 （默认值）
+				flex-end   右对齐
+				center     居中对齐 
+				space-between 平均分布在主轴线上
+				space-around  平均分布在主轴线上 左右保持一定距离 
+			*/
+			-webkit-justify-content:center;
+			justify-content:center;
+
+			/*第六 用来定义伸缩项目在交叉轴上的对齐方式 
+				flex-start 上对齐（默认值）
+				flex-end   下对齐
+				center     垂直居中
+				baseline   
+				stretch    拉伸，效果就是高度100%;
+			*/
+			align-items:center;
+
+			/*第七
+				用来调整伸缩项目出现换行后在交叉轴上的对齐方式 语法为
+				flex-start 跑到上面去了
+				flex-end   跑到下面去了
+				center     居中
+				space-between 平均分配
+				space-around  平均分布在主轴线上 左右保持一定距离
+				stretch    拉伸 (默认值)		
+			*/
+			align-content:flex-start;
+
+			margin:0;
+			height:100%;
+			width:100%;
+		}
+
+		#box1{
+			background:red;
+			height:100px;
+			width:80px;
+		}
+
+		#box2{
+			background:yellow;
+			height:100px;
+			width:80px;
+		}
+
+		#box3{
+			background:green;
+			height:100px;
+			width:80px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box1">第一个</div>
+	<div id="box2">第二个</div>
+	<div id="box3">第三个</div>
+</body>
+</html>
